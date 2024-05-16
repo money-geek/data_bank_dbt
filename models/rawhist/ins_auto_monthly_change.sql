@@ -42,7 +42,7 @@ with data_recurring as
 		FROM new_table_provider_mapping_2023 as t) AS p
 		ON c_1.marketid::TEXT = p.marketid::TEXT
 		AND p.STATE = c_1.STATE
-	WHERE data_date = '2024-02-01'
+	--WHERE data_date = '2024-02-01'
 	AND age::TEXT = '40'::TEXT
 	AND c_1.insurancescore_alignment in ('Good','Blank')
 	AND vehicle::TEXT = '2012 Toyota Camry LE'::TEXT
