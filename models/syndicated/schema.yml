@@ -1,0 +1,34 @@
+
+version: 2
+
+models:
+  - name: ins_auto_best_state_baseline_temp_1
+    description: "A starter dbt model"
+    columns:
+      - name: provider
+        description: "The primary key for this table"
+        tests:
+          - not_null
+      - name: data_date
+        tests:
+          - not_null
+      - name: annual_premium
+        tests:
+          - not_null
+  - name: ins_auto_master_table_state_2023_temp
+    description: "A starter dbt model"
+    columns:
+      - name: national_provider
+        description: "The primary key for this table"
+        tests:
+          - not_null
+      - name: data_date
+        tests:
+          - not_null
+      - name: state_annualpremium
+        tests:
+          - not_null
+
+
+ 
+  

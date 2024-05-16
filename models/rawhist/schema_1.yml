@@ -1,0 +1,85 @@
+
+version: 2
+
+models:
+  - name: ins_auto_monthly_change
+    description: "A starter dbt model"
+    columns:
+      - name: provider_id
+        description: "The primary key for this table"
+        tests:
+          - not_null
+      - name: data_date
+        tests:
+          - not_null
+
+  - name: ins_auto_monthly_change_rate
+    description: "A starter dbt model"
+    columns:
+      - name: provider_id
+        description: "The primary key for this table"
+        tests:
+          - not_null
+      - name: data_date
+        tests:
+          - not_null
+
+  - name: ins_auto_monthly_change_report
+    description: "A starter dbt model"
+    columns:
+      - name: provider
+        tests:
+          - not_null
+      - name: data_date
+        tests:
+          - not_null
+
+  - name: ins_auto_monthly_change_rate_comparison
+    description: "Comparison table for change rate"
+    columns:
+      - name: provider
+        description: "The primary key for this table"
+        tests:
+          - not_null
+      - name: recent_date
+        tests:
+          - not_null
+
+  - name: ins_auto_monthly_national_presence
+    description: "A starter dbt model"
+    columns:
+      - name: national_provider
+        tests:
+          - not_null
+
+  - name: ins_auto_monthly_new_premiums_city
+    description: "A starter dbt model"
+    columns:
+      - name: data_date
+        tests:
+          - not_null
+      - name: provider_id
+        tests:
+          - not_null
+
+  - name: ins_auto_monthly_new_premiums
+    description: "A starter dbt model"
+    columns:
+      - name: provider
+        tests:
+          - not_null
+      - name: data_date
+        tests:
+          - not_null
+  - name: ins_auto_pop_wt_new_premiums
+    description: "A starter dbt model"
+    columns:
+      - name: national_provider
+        tests:
+          - not_null
+      - name: data_date
+        tests:
+          - not_null
+
+ 
+  
