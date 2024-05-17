@@ -12,7 +12,7 @@ profile: 'data_bank_dbt'
 
 # variable indicates current month for rapid_refresh
 vars:
-  current_month: '2023-01-01'
+  current_month: '2023-12-01'
 
 
 # These configurations specify where dbt should look for different types of files.
