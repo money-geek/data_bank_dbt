@@ -59,5 +59,5 @@ from ins_auto_report_110_2022_recurring
 
 SELECT * from 
 CTE
-where data_date = '{{ var("current_month") }}'
+--where data_date = '{{ var("current_month") }}'
 
