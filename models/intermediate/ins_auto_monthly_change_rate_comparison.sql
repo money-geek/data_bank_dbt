@@ -28,9 +28,10 @@ INNER JOIN recent_date rd ON cd.company = rd.company AND cd.age = rd.age AND cd.
 AND cd.marital_status = rd.marital_status AND cd.vehicle = rd.vehicle AND cd.coverage_level = rd.coverage_level AND cd.insurancescore_alignment = rd.insurancescore_alignment
 AND cd.driving_record_violations = rd.driving_record_violations AND cd.provider = rd.provider AND cd.national_provider = rd.national_provider
 AND cd.city = rd.city AND cd.state = rd.state
-AND cd.annual_premium_calculated != rd.annual_premium_calculated
+--AND cd.annual_premium_calculated != rd.annual_premium_calculated
 WHERE cd.data_date IN (SELECT DISTINCT data_date FROM ins_auto_monthly_change_rate ORDER BY data_date DESC LIMIT 2)
 AND cd.data_date NOT IN (SELECT DISTINCT data_date FROM ins_auto_monthly_change_rate ORDER BY data_date DESC LIMIT 1)
 )
 SELECT DISTINCT * 
 FROM comparison_date
+
