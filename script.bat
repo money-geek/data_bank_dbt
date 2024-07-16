@@ -2,7 +2,7 @@
 setlocal enabledelayedexpansion
 
 rem List of months
-set months=2023-07-01 2023-08-01 2023-09-01 2023-10-01 2023-11-01
+set months=2024-01-01 2024-02-01 2024-03-01
 
 rem Iterate over each month and run the DBT command
 for %%m in (%months%) do (
