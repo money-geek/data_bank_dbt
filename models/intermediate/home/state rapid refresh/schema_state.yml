@@ -1,0 +1,30 @@
+
+version: 2
+
+models:
+  - name: home_master_table_extrapolated_alldata_2
+    description: "A model"
+  - name: home_temp_construction_type
+    description: "A model"
+  - name: home_temp_credit_credit_tier
+    description: "A model"
+  - name: home_temp_deductible
+    description: "A model"
+  - name: home_temp_protection_class
+    description: "A model"
+  - name: home_temp_roof_type
+    description: "A model"
+  - name: ins_home_extrapolated_rapid_refresh
+    description: "A model"
+  - name: ins_home_master_table_extrapolated_data_state_2024_temp
+    description: "A model"
+  - name: ins_home_master_table_extrapolated_data_state_2024
+    description: "A model"
+  - name: ins_home_master_table_extrapolated_data_state_insert_2024
+    description: "A model"
+  - name: ins_home_ratio_table_101_temp
+    description: "A model"
+  - name: ins_home_ratio_table_108_temp
+    description: "A model"
+  - name: ins_home_report_master_table_108_temp
+    description: "A model"

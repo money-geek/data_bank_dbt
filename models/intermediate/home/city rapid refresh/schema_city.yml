@@ -1,0 +1,19 @@
+
+version: 2
+
+models:
+  - name: ins_home_master_table_extrapolated_alldata_cr
+    description: "A model"
+  - name: ins_home_master_table_extrapolated_data_city_2024
+    description: "A model"
+  - name: ins_home_temp_construction_type_cr
+    description: "A model"
+  - name: ins_home_temp_credit_credit_tier_cr
+    description: "A model"
+  - name: ins_home_temp_deductible_cr
+    description: "A model"
+  - name: ins_home_temp_protection_class_cr
+    description: "A model"
+  - name: ins_home_temp_roof_type_cr
+    description: "A model"
+ 
