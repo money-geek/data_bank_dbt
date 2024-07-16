@@ -37,7 +37,7 @@ WITH CTE AS (
 	marketid,
 	"group",
 	company,
-	CASE WHEN mandatorybi_premium = '0' OR annualpremium = '' OR annualpremium IS NULL THEN 0 ELSE mandatorybi_premium::NUMERIC END AS mandatorybi_premium,
+	CASE WHEN mandatorybi_premium = '0' OR mandatorybi_premium = '' OR mandatorybi_premium IS NULL THEN 0 ELSE mandatorybi_premium::NUMERIC END AS mandatorybi_premium,
 	CASE WHEN bi_pemium = '0' OR bi_pemium = '' OR bi_pemium IS NULL THEN 0 ELSE bi_pemium::NUMERIC END AS bi_pemium,
 	CASE WHEN pd_premium = '0' OR pd_premium = '' OR pd_premium IS NULL THEN 0 ELSE pd_premium::NUMERIC END AS pd_premium,
 	CASE WHEN umbi_premium = '0' OR umbi_premium = '' OR umbi_premium IS NULL THEN 0 ELSE umbi_premium::NUMERIC END AS umbi_premium,

@@ -32,7 +32,7 @@ with data_recurring as
 	AVG(uimpd_premium) as uimpd_premium,
 	AVG(guestpip_premium) as guestpip_premium,
 	AVG(ppi_premium) as ppi_premium
-	FROM {{ ref('ins_auto_recurring_raw') }} AS c_1
+	FROM {{ ref('ins_auto_recurring_raw') }} AS c_1  
 	--------------------------- 7/08/2023 Eddy --- Fixed mapping issue with missing provider ---;
 	LEFT JOIN (
 		SELECT DISTINCT provider,
@@ -42,7 +42,8 @@ with data_recurring as
 		FROM new_table_provider_mapping_2023 as t) AS p
 		ON c_1.marketid::TEXT = p.marketid::TEXT
 		AND p.STATE = c_1.STATE
-	WHERE data_date = '{{ var("current_month") }}'
+	WHERE --data_date = '{{ var("current_month") }}' 
+			 data_date = '2024-04-01' --and c_1.state = 'FL' 
 	AND age::TEXT = '40'::TEXT
 	AND c_1.insurancescore_alignment in ('Good','Blank')
 	AND vehicle::TEXT = '2012 Toyota Camry LE'::TEXT
@@ -95,6 +96,8 @@ data_2022 as (
 			'100/300/100 w/ $1000 Deductible',
 			'State Minimum w/ $500 Deductible'
 			)
+		and 
+
 	GROUP BY c_1.company,
 		c_1.zipcode,
 		STATE,

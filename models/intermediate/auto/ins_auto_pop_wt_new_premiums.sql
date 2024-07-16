@@ -73,3 +73,6 @@ left join t2
 on t1.national_provider = t2.national_provider 
 and t1.state = t2.state
 where t1.state_annualpremium != 0
+
+
+--select distinct data_date from ins_auto_pop_wt_new_premiums order by data_date
