@@ -24,9 +24,9 @@ WITH cte AS (select qm.*,
         END as city,
         case 
             when c.data_date is null 
-            then (select distinct TO_CHAR(TO_DATE(data_date, 'YYYYMM'), 'MM/DD/YYYY') 
+            then (select distinct data_date 
                      from {{ ref('ins_auto_monthly_change') }} where data_date is not null )
-            else TO_CHAR(TO_DATE(c.data_date, 'YYYYMM'), 'MM/DD/YYYY') end AS data_date,
+            else c.data_date end AS data_date,
         r.place_state,
         r.display_name,
         r.abbrev AS state_code,
