@@ -1,0 +1,49 @@
+
+version: 2
+
+models:
+  - name: ins_auto_bestcheap_city_baseline_temp_full
+    description: "This model is the temporary table that stores the last month of min and full coverages for auto by state"
+    columns:
+      - name: provider
+        description: "provider for auto insurance"
+        tests:
+          - not_null
+
+      - name: data_date
+        description: "date of the current table"
+        tests:
+          - not_null
+      - name: avg_annual_premium
+        description: "Cost of the annual premium"
+        tests:
+          - not_null
+
+      - name: provider_id
+        description: "provider_id for the company into Money Geek"
+        tests:
+          - not_null    
+  - name: ins_auto_monthly_rates_city_best_temp_full
+    description: "This model is the historical table that stores the last month of min and full coverages for auto by state"
+    columns:
+      - name: provider
+        description: "provider for auto insurance"
+        tests:
+          - not_null
+      - name: data_date
+        description: "date of the current table"
+        tests:
+          - not_null
+      - name: avg_annual_premium
+        description: "Cost of the annual premium"
+        tests:
+          - not_null
+
+      - name: provider_id
+        description: "provider_id for the company into Money Geek"
+        tests:
+          - not_null    
+
+
+ 
+  
