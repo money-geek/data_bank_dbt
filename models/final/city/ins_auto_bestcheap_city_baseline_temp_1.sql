@@ -86,7 +86,7 @@
                             avg(ins_auto_master_table_city_2022.claims_score) AS claims_score,
                             avg(ins_auto_master_table_city_2022.coverage_score) AS coverage_score
                            FROM {{ ref('ins_auto_monthly_new_premiums_city_full_inserted') }} ins_auto_master_table_city_2022
-                          WHERE data_date = '2024-01-01' 
+                          WHERE  data_date = '{{ var("current_month") }}' 
                           AND (ins_auto_master_table_city_2022.age::text = ANY (ARRAY['25'::character varying::text, '40'::character varying::text, '65'::character varying::text])) AND ins_auto_master_table_city_2022.comp_coll_deductible = '1000/1000'::text AND ins_auto_master_table_city_2022.bi_pd_limit = '100/300/100000'::text AND ins_auto_master_table_city_2022.is_user_a_veteran = 'No'::text
                           GROUP BY data_date,ins_auto_master_table_city_2022.vehicles,ins_auto_master_table_city_2022.insurancescore_alignment,ins_auto_master_table_city_2022.is_user_a_veteran,ins_auto_master_table_city_2022.driving_record_violations, ins_auto_master_table_city_2022.age, ins_auto_master_table_city_2022.state, ins_auto_master_table_city_2022.city, ins_auto_master_table_city_2022.provider,provider_id, 'Full Coverage'::text) t
                 UNION
@@ -133,7 +133,7 @@
                             avg(ins_auto_master_table_city_2022.claims_score) AS claims_score,
                             avg(ins_auto_master_table_city_2022.coverage_score) AS coverage_score
                            FROM {{ ref('ins_auto_monthly_new_premiums_city_full_inserted') }} ins_auto_master_table_city_2022
-                          WHERE  data_date = '2024-01-01' --'{{ var("current_month") }}' 
+                          WHERE  data_date = '{{ var("current_month") }}' 
                           and (ins_auto_master_table_city_2022.age::text = ANY (ARRAY['25'::character varying::text, '40'::character varying::text, '65'::character varying::text])) AND ins_auto_master_table_city_2022.bi_pd_limit = 'State Minimum'::text AND ins_auto_master_table_city_2022.is_user_a_veteran = 'No'::text
                           GROUP BY data_date,ins_auto_master_table_city_2022.vehicles,ins_auto_master_table_city_2022.insurancescore_alignment,ins_auto_master_table_city_2022.is_user_a_veteran,ins_auto_master_table_city_2022.driving_record_violations, ins_auto_master_table_city_2022.age, ins_auto_master_table_city_2022.state, ins_auto_master_table_city_2022.city, ins_auto_master_table_city_2022.provider,provider_id, 'Minimum Coverage'::text) t
                 ), cte_2 AS (

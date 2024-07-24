@@ -1,0 +1,38 @@
+
+#state
+dbt run -m ins_auto_master_table_state_2023_temp_full ins_auto_best_state_baseline_temp_full ins_auto_best_state_minimum_temp_full ins_auto_monthly_rates_state_best_temp_full
+
+#city
+dbt run -m ins_auto_monthly_rates_city_best_temp_full
+
+#national 
+dbt run -m ins_auto_national_all_coverage_baseline_non_veteran_temp_full ins_auto_monthly_rates_national_best_temp_full
+
+
+
+
+--sql
+
+select distinct month from dbt.ins_auto_monthly_rates_state_best_temp_full
+
+select distinct month from dbt.ins_auto_monthly_rates_city_best_temp_full
+
+select distinct month from dbt.ins_auto_monthly_rates_national_best_temp_full
+
+
+
+drop table ins_auto_monthly_rates_state_best_temp
+
+drop table ins_auto_monthly_rates_city_best_temp
+
+drop table ins_auto_monthly_rates_national_best_temp
+
+
+create table ins_auto_monthly_rates_state_best_temp 
+as select * from dbt.ins_auto_monthly_rates_state_best_temp_full;
+
+create table ins_auto_monthly_rates_city_best_temp 
+as select * from dbt.ins_auto_monthly_rates_city_best_temp_full;
+
+create table ins_auto_monthly_rates_national_best_temp 
+as select * from dbt.ins_auto_monthly_rates_national_best_temp_full;
